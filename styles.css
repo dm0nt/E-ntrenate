@@ -1,0 +1,109 @@
+.centrado{
+    text-align: center;
+}
+
+.justify{
+    text-align: justify;
+}
+
+body {
+    margin: 0;
+    height: 100dvh;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+h1,h2,h3,h4,h5,h6{
+    text-align: justify;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(81, 24, 24);
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    font-weight: 100;
+    font-style: italic;
+    color: rgb(0, 0, 0);
+}
+
+.head {
+    background-color: rgb(79, 132, 179);
+    display: flex; /* Usamos flexbox para alinear los elementos "Creo que son los cuadros que se ven al inspeccionar" */
+    align-items: center; /* Centra el contenido */
+    padding: 5px 10px; /* Espaciado dentro de la franja #px * #px "Afecta el menú" */
+}
+
+.navegador{
+    color: white;
+    text-align: right;
+    text-decoration: none; /* Sin subrayado */
+}
+
+.navegador a:hover {
+    color: rgb(28, 114, 96); /* Cambia el color al pasar el mouse */
+}
+
+.audioP1 {
+    float: right;
+    padding: 15px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}
+
+.audioSpace {
+    margin: 10px 10px 3cm;
+}
+
+.EspaciadoTitulos{
+    margin: auto;
+    padding: 15px 5px 20px;
+    border: 15cm;
+}
+
+.article{
+    margin: 2.54cm 2.54cm;
+    padding: 20px;
+    border: 2px solid rgb(181, 181, 124);
+    text-align: justify;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.image { 
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease;
+    max-width: 100%;
+    height: auto;
+}
+
+.image:hover {
+    transform: rotate(360deg);
+}
+
+
+.pompy{
+    text-align: center;
+}
+
+.column {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    gap: 20px;
+}
+
+.container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    gap: 10px; 
+}
+
+.section {
+    width: 30%; 
+    border: 6px solid hsla(0, 0%, 0%, 0.114);
+    padding: 10px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}

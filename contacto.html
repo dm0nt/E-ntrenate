@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="head">
+        <hr>
+            <h1 class="centrado">Contacto</h1>
+        <hr>
+
+        <div>
+            <nav class="navegador">
+                <ul>
+                    <il>
+                        <a href="mi-blog.html" class="navegador">Inicio</a><br>
+                        <a href="sobre-mi.html" class="navegador">Sobre Mí</a><br>
+                        <a href="contacto.html" class="navegador">Contacto</a><br>
+                    </il>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+<div class="column">
+    <section class="centrado">
+        <hr>
+        <h1>¿Cómo Contactarme?</h1>
+        <hr>
+        <p>Puedes contactarme por correo electrónico a:<br><a href="mailto:daniel@gmail.com">daniel@gmail.com</a></p>
+        <p>Vía telefónica:<br><a href="tel:3192872791">3192872791</a></p>
+    </section>
+
+    <section class="centrado">
+        <hr>
+        <h1>FAQS</h1>
+        <hr>
+        <p>Gracias por preferirnos siempre!!</p>
+        <p>Si deseas enviarnos un correo electrónico, llena el siguiente formulario.</p>
+    </section>
+
+    <section class="centrado">
+        <form id="Form">
+            <label for="mail">Para:</label>
+            <input type="email" id="mail" name="mail" required><br><br>
+    
+            <label for="subject">Asunto:</label>
+            <input type="text" id="subject" name="subject" required><br><br>
+    
+            <p>Motivo:</p>
+                <li>
+                    <label>
+                        <input type="radio" name="motivo" value="Queja" required> Queja
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="motivo" value="Solicitud" required> Solicitud
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="motivo" value="Reclamación" required> Reclamación
+                    </label>
+                </li>
+    
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea><br><br>
+    
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    
+    <script class="centrado">
+        document.getElementById("Form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const mail = document.getElementById("mail").value.trim();
+            const subjectText = document.getElementById("subject").value.trim();
+            const mensaje = document.getElementById("mensaje").value.trim();
+            const motivoElement = document.querySelector('input[name="motivo"]:checked'); 
+
+            if (!motivoElement) {
+                alert("Por favor, selecciona un motivo.");
+                return;
+            }
+
+            const motivo = motivoElement.value;
+
+            if (mail === "" || subjectText === "" || mensaje === "") {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
+
+            const subject = encodeURIComponent(`(${motivo}): ${subjectText}`);
+            const body = encodeURIComponent(mensaje);
+
+            const mailtoLink = `mailto:${mail}?subject=${subject}&body=${body}`;
+
+            window.location.href = mailtoLink;
+        });
+    </script>
+</div>
+    <footer>
+        <br>
+        <br>
+        <hr>        
+        <p>&copy; Todos los derechos reservados.</p>
+        <hr>
+        <br>
+        <p>Muchas gracias por la visita</p>
+    </footer>
+</body>
+</html>
